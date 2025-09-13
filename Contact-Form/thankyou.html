@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <link rel="shortcut icon" href="../assets/RoCars.png">
+  <style>
+    a {text-decoration: none; color: #111;}
+    @font-face{font-family:'LEMONMILK-Regular'; src:url('../../assets/LEMONMILK-Regular.otf') format('opentype');font-display:swap;}
+
+    body {
+      background-color: #ffa666;
+      color: #111;
+      font-family: 'LEMONMILK-Regular', sans-serif;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      font-size: 5rem;
+      overflow: hidden;
+    }
+    body::before{content:'';position:fixed;top:-100%;left:-50%;width:300%;height:300%;background-image:url(../../assets/noise.png);opacity:1;animation:grain 8s steps(10) infinite;}
+    @keyframes grain{0%,100%{transform:translate(0,0);}10%{transform:translate(-5%,-10%);}20%{transform:translate(-15%,5%);}30%{transform:translate(7%,-25%);}40%{transform:translate(-5%,25%);}50%{transform:translate(-15%,10%);}60%{transform:translate(15%,0%);}70%{transform:translate(0%,15%);}80%{transform:translate(3%,35%);}90%{transform:translate(-10%,10%);}}
+    
+    p{filter: url(#pDistort);}
+    .mainp{color: #eee;}
+    .mainp::before{content:'';position:absolute;z-index:-1;top:0%;bottom:0%;left:-0.25em;right:-0.25em;background-color:#000000;border:2px solid #eee; transform:scaleX(1);transform-origin:center center; transition:transform 0.5s ease-in-out; filter:url(#pDistort);}
+
+    .subp {font-size: 2rem; /*-webkit-text-stroke: 1px #eee;*/}
+
+    .backp {position: relative; width: fit-content; position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; cursor: pointer;}
+    .backp::before{content:'';position:absolute;z-index:1;top:33%;bottom:33%;left:-0.25em;right:-0.25em;background-color:#eee;border:2px solid #000;transform-origin:center right;transform:scaleX(0);transition:transform 0.5s ease-in-out; filter:url(#pDistort);}
+    .backp:hover::before{transform:scaleX(1);transform-origin:center left;}
+
+
+  </style>
+</head>
+<body>
+    <div>
+        <p class="mainp">Your message just made it <br> to RoCars HQ.</p>
+        <p class="subp">Sit tight — one of our specialists <br> will be in touch soon. 🏁</p>
+        <a href="./index.html"><p class="backp">BACK!</p></a>
+    </div>
+    <svg style="display: none;">
+        <defs>
+          <filter id="pDistort">
+            <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turb">
+              <animate attributeName="seed" from="2" to="500" dur=".5s" repeatCount="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="turb" scale="10" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+          <filter id="pDistort-max">
+            <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turb">
+              <animate attributeName="seed" from="2" to="500" dur=".25s" repeatCount="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="turb" scale="33" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </defs>
+    </svg>
+</body>
+</html>

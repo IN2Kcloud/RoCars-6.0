@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROCARS | Get In Touch</title>
+    <link rel="shortcut icon" href="../assets/RoCars.png">
+    <link rel="stylesheet" href="CT/styles.css"/>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="nav">
+        <div class="links">
+          <a class="linkBox" href="https://wa.me/+4915161936805" target="_blank">WhatsApp</a>
+          <a class="linkBox" href="https://t.me/RoCars_TV" target="_blank">Telegram</a>
+          <a class="linkBox" href="mailto:rocarsinfo@gmail.com" target="_blank">GMAIL</a>
+        </div>
+      </div>
+
+      <canvas id="LPtextCanvas"></canvas>
+
+      <div class="header">
+        <div class="cta">
+          <button id="toggle">Order now !</button>
+        </div>
+      </div>
+
+      <div class="tagline">
+        <p>
+          2025 © RoCars.co™ 
+        </p>
+      </div>
+
+    </section>
+
+    <div class="overlay">
+      <div class="col">
+        <div class="copy">
+          <p>[ RoCars ]</p>
+          <p id="back">[ back ]</p>
+        </div>
+
+        <div class="formBG"></div>
+
+        <form id="contactForm">
+          <!-- Name -->
+          <label for="from_name">Name*</label><br />
+          <input type="text" id="from_name" name="from_name" placeholder="user name" required />
+          <br /><br />
+        
+          <!-- Location -->
+          <label for="email">Email*</label><br />
+          <input type="email" id="email" name="email" placeholder="example@email.com" required />
+          <br /><br />
+        
+          <!-- Message -->
+          <label for="message">Message</label><br />
+          <textarea id="message" name="message" placeholder="Your message here..."></textarea>
+
+          <br /><br />
+        
+          <!-- Inquiries (checkbox group) -->
+          <label>Inquiries</label><br />
+          <div class="jobs">
+            <div class="job-items">
+              <div class="item">
+                <input type="checkbox" id="inq-sales" name="inquiries" value="Sales" class="custom-checkbox" />
+                <label for="inq-sales">Sales</label>
+              </div>
+              <div class="item">
+                <input type="checkbox" id="inq-video" name="inquiries" value="Videography" class="custom-checkbox" />
+                <label for="inq-video">Videography</label>
+              </div>
+            </div>
+            <div class="job-items">
+              <div class="item">
+                <input type="checkbox" id="inq-cars" name="inquiries" value="Cars" class="custom-checkbox" />
+                <label for="inq-cars">Cars</label>
+              </div>
+              <div class="item">
+                <input type="checkbox" id="inq-other" name="inquiries" value="Other" class="custom-checkbox" />
+                <label for="inq-other">Other</label>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Submit -->
+          <button type="submit">Send Order</button>
+        </form>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <svg style="display: none;">
+      <defs>
+        <filter id="pDistort">
+          <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turb">
+            <animate attributeName="seed" from="2" to="500" dur=".5s" repeatCount="indefinite" />
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="turb" scale="10" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="pDistort-max">
+          <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turb">
+            <animate attributeName="seed" from="2" to="500" dur=".25s" repeatCount="indefinite" />
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="turb" scale="33" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+
+    <script type="module" src="./CT/lptext-shader.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+    <script src="CT/script.js"></script>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <script>
+      // Initialize EmailJS
+      emailjs.init('Vv2DlUYIIZCfmGiLE'); // replace with your actual public key
+    
+      document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+    
+        // Get form data
+        const form = e.target;
+    
+        // Get all checked inquiries
+        const inquiryElements = form.querySelectorAll('input[name="inquiries"]:checked');
+        const inquiries = Array.from(inquiryElements).map(el => el.value).join(', ');
+    
+        // Prepare data object
+        const formData = {
+          from_name: form.from_name.value,
+          email: form.email.value,
+          message: form.message.value,
+          inquiries: inquiries
+        };
+
+    
+        // Send email
+        emailjs.send('service_ocllxyo', 'template_458dv44', formData)
+          .then(() => {
+            form.reset();
+            // Redirect to thank you page
+            window.location.href = 'thankyou.html';
+          })
+          .catch((error) => {
+            console.error("EmailJS Error:", error);
+            alert("❌ Something went wrong. Please try again later.");
+          });
+      });
+    </script>
+
+  </body>
+</html>

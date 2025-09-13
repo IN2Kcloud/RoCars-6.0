@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blob Scroll Follow</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 400vh; /* So we can scroll */
+      overflow-x: hidden;
+      background: #eee;
+    }
+
+    #blob {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: black;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="blob"></div>
+
+  <script>
+    const blob = document.getElementById("blob");
+
+    window.addEventListener("pointermove", (event) => {
+      blob.animate({
+        left: `${event.pageX}px`,
+        top: `${event.pageY}px`
+      }, {
+        duration: 3000,
+        fill: "forwards"
+      });
+    });
+  </script>
+</body>
+</html>

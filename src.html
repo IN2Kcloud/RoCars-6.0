@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>RoCars</title>
+	<meta name="description" content="cars." />
+	<meta name="keywords" content="cars, road, highway, lights, speed" />
+	<meta name="author" content="EL-KABOOS" />
+	<link rel="shortcut icon" href="./assets/RoCars.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://use.typekit.net/uok8swb.css">
+	<link rel="stylesheet" href="base.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/three@0.160.0/build/three.module.js"></script>
+</head>
+<body class="before-load">
+	  <div class="loading">
+      <div class="loading-circle">
+      <p class="backp">ROCARS !</p>
+      </div>
+    </div>
+<!--
+    <div class="screen">  
+      <div class="screen-image"></div>  
+      <div class="screen-overlay"></div>  
+      <div class="screen-content"></div>
+    </div>
+-->    
+    <div id="blob"></div> 
+    <div id="blur"></div>
+
+    <div class="absolute">
+			<div class="absolute inset-0 jc">
+			  <div class="bg-shape1 bg-pr o50 bg-blur"></div>
+			  <div class="bg-shape2 bg-gd o50 bg-blur"></div>
+			  <div class="bg-shape1 bg-rd o50 bg-blur"></div>
+			</div>
+		</div>
+
+    <div class="tv-wrapper">
+      <div id="window" class="tv-window">
+        <div class="vhs-effect">
+          <video id="window-video" autoplay loop muted playsinline src="assets/RoCars.mp4"></video>
+          <div id="window-text">X</div>
+          <div class="vhs-scanlines"></div>
+          <div class="tv-static"></div>
+        </div>
+      </div>
+    </div>
+
+	  <div class="logo-glitch-wrapper">
+      <img src="./assets/RoCarsO.png" class="logo-base" alt="Logo">
+      <video src="assets/RoCars.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-glitch-wrapper">
+      <video autoplay muted loop playsinline>
+        <source src="./assets/RoCars.mp4" type="video/mp4" />
+      </video>
+    </div>
+    
+    <!--MENU-->
+
+    <div class="logo">
+      <img src="./assets/RoCarsW.png"></img>
+      <a href="">RoCars</a>
+    </div>
+    <div class="menu-toggle closed">
+      <div class="menu-toggle-icon">
+        <div class="hamburger">
+          <div class="menu-bar" data-position="top"></div>
+          <div class="menu-bar" data-position="bottom"></div>
+        </div>
+      </div>
+      <div class="menu-copy">
+        <span class="menu-bg"></span>
+        <p>START</p>
+      </div>
+    </div>
+
+    <div class="menu">
+
+      <div class="menu-logo">
+          <a href="#">RoCars</a>
+      </div>
+
+      <div class="menu-wrap">
+        <nav class="menu-nav">
+          <div class="menu__item">
+             <a class="menu__item-link" href="store/index.html" target="_blank">STORE</a>
+              <div class="marquee">
+               <div class="marquee__inner-wrap">
+                <div class="marquee__inner" aria-hidden="true">
+                  <span>the best place to get top brands new cars!   •</span>
+                  <span>a unique way to live the most popular Auto Shows without leaving your home!   •</span>
+                  <span>the best place to get top brands new cars!   •</span>
+                  <span>a unique way to live the most popular Auto Shows without leaving your home!   •</span>
+                </div>
+              </div>
+             </div>
+            </div>
+            <div class="menu__item">
+             <a class="menu__item-link" href="studio/index.html" target="_blank">STUDIO</a>
+              <div class="marquee">
+               <div class="marquee__inner-wrap">
+                <div class="marquee__inner" aria-hidden="true">
+                  <span>where horsepower meets cinematic excellence!   •</span>
+                  <span>drive emotion and elevate your brand on every screen!   •</span>
+                  <span>where horsepower meets cinematic excellence!   •</span>
+                  <span>drive emotion and elevate your brand on every screen!   •</span>
+                </div>
+              </div>
+             </div>
+            </div>
+            <div class="menu__item">
+             <a class="menu__item-link" href="brands/index.html" target="_blank">BRANDS</a>
+              <div class="marquee">
+               <div class="marquee__inner-wrap">
+                <div class="marquee__inner" aria-hidden="true">
+                   <span>Aston Martin</span>
+                   <div class="marquee__img" style="background-image:url(assets/brands/Aston-Martin.webp)"></div>
+                   <span>BMW</span>
+                   <div class="marquee__img" style="background-image:url(assets/brands/bmw.webp)"></div>
+                   <span>Chevrolet</span>
+                   <div class="marquee__img" style="background-image:url(assets/brands/Chevrolet.webp)"></div>
+                   <span>Ferrari</span>
+                   <div class="marquee__img" style="background-image:url(assets/brands/ferrari.webp)"></div>
+                   <span>Land-Rover</span>
+                   <div class="marquee__img" style="background-image:url(assets/brands/Land-Rover.webp)"></div>
+                   <span>Maserati</span>
+                   <div class="marquee__img" style="background-image:url(assets/brands/maserati.webp)"></div>
+                   <span>Porsche</span>
+                   <div class="marquee__img" style="background-image:url(assets/brands/porsche.webp)"></div>
+                   <span>Subaru</span>
+                   <div class="marquee__img" style="background-image:url(assets/brands/subaru.webp)"></div>
+                </div>
+              </div>
+             </div>
+            </div>
+            <div class="menu__item">
+                <a class="menu__item-link" href="cars/index.html" target="_blank">CARS</a>
+                <div class="marquee">
+                  <div class="marquee__inner-wrap">
+                   <div class="marquee__inner" aria-hidden="true">
+                      <span>Audi</span>
+                      <div class="marquee__img" style="background-image:url(assets/cars/Audi.webp)"></div>
+                      <span>Lamborghini</span>
+                      <div class="marquee__img" style="background-image:url(assets/cars/Lambo.webp)"></div>
+                      <span>McLaren</span>
+                      <div class="marquee__img" style="background-image:url(assets/cars/McLaren.webp)"></div>
+                      <span>Rolls-Royce</span>
+                      <div class="marquee__img" style="background-image:url(assets/cars/RR.webp)"></div>
+                      <span>Mercedes</span>
+                      <div class="marquee__img" style="background-image:url(assets/cars/Mercedes.webp)"></div>
+                      <span>VolksWagen</span>
+                      <div class="marquee__img" style="background-image:url(assets/cars/vv.webp)"></div>
+                      <span>Bentley</span>
+                      <div class="marquee__img" style="background-image:url(assets/cars/Bentley.webp)"></div>
+                      <span>Bugatti</span>
+                      <div class="marquee__img" style="background-image:url(assets/cars/Bugatti.webp)"></div>
+                   </div>
+                  </div>
+                </div>
+            </div>
+            <div class="menu__item">
+                <a class="menu__item-link" href="./Contact-Form/index.html" target="_blank">Get In Touch</a>
+                <div class="marquee">
+                  <div class="marquee__inner-wrap">
+                   <div class="marquee__inner" aria-hidden="true">
+                      <span>TikTok</span>
+                      <span><i class="fa-brands fa-tiktok"></i></span>
+                      <span>Instagram</span>
+                      <span><i class="fa-brands fa-instagram"></i></span>
+                      <span>Telegram</span>
+                       <span><i class="fa-brands fa-telegram"></i></span>
+                      <span>YouTube</span>
+                      <span><i class="fa-brands fa-youtube"></i></span>
+                      <span>TikTok</span>
+                      <span><i class="fa-brands fa-tiktok"></i></span>
+                      <span>Instagram</span>
+                      <span><i class="fa-brands fa-instagram"></i></span>
+                      <span>Telegram</span>
+                       <span><i class="fa-brands fa-telegram"></i></span>
+                      <span>YouTube</span>
+                      <span><i class="fa-brands fa-youtube"></i></span>
+                      <span>TikTok</span>
+                      <span><i class="fa-brands fa-tiktok"></i></span>
+                      <span>Instagram</span>
+                      <span><i class="fa-brands fa-instagram"></i></span>
+                      <span>Telegram</span>
+                       <span><i class="fa-brands fa-telegram"></i></span>
+                      <span>YouTube</span>
+                      <span><i class="fa-brands fa-youtube"></i></span>
+                      <span>TikTok</span>
+                      <span><i class="fa-brands fa-tiktok"></i></span>
+                      <span>Instagram</span>
+                      <span><i class="fa-brands fa-instagram"></i></span>
+                      <span>Telegram</span>
+                       <span><i class="fa-brands fa-telegram"></i></span>
+                      <span>YouTube</span>
+                      <span><i class="fa-brands fa-youtube"></i></span>
+                   </div>
+                  </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+      <div class="col col-1">
+        <div class="links">
+          <div class="link"><a href="#"></a></div>
+          <div class="link"><a href="#"></a></div>
+          <div class="link"><a href="#"></a></div>
+          <div class="link"><a href="#"></a></div>
+        </div>
+        <div class="video-wrapper">
+          <video autoplay muted loop>
+            <source src="./assets/RoCars BG III.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <div class="col col-2">
+        <div class="socials">
+          <div class="sub-col">
+            <p>RoCars</p>
+            <p>9 quao Androe Rockfield</p>
+            <p>69001 LA California</p>
+            <p>United States</p>
+            <br />
+            <p>rocarsinfo@gmail.com</p>
+            <p>RoCars.com</p>
+          </div>
+          <div class="sub-col">
+            <a href="https://www.instagram.com/rocarstv/" target="_blank"><p>Instagram</p></a>
+            <a href="https://www.youtube.com/@RoCarsTV" target="_blank"><p>YouTube</p></a>
+            <a href="https://www.tiktok.com/@b.rocars" target="_blank"><p>TikTok</p></a>
+            <a href="https://t.me/RoCars_TV" target="_blank"><p>Telegram</p></a>
+            <br />
+            <p>+49 1516 1936805</p>
+          </div>
+        </div>
+        <div class="header">
+          <h1>RoCars</h1>
+        </div>
+      </div>
+    </div>
+
+  <svg class="max-txt" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      
+      <filter id="minFilter">
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turbulence1">
+    	    <animate attributeName="seed" from="2" to="50" dur="10s" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="10" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+
+      <filter id="HoverDistort">
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turb">
+          <animate attributeName="seed" from="2" to="50" dur="5s" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="turb" scale="10" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+      <filter id="HoverDistort-max">
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turb">
+          <animate attributeName="seed" from="2" to="50" dur="5s" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="turb" scale="33" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+
+      <filter id="HoverDistortThunder">
+        <!-- First: HoverDistort -->
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="t1">
+          <animate attributeName="seed" from="2" to="50" dur="5s" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="t1" scale="10" xChannelSelector="R" yChannelSelector="G" result="pass1"/>
+        
+        <!-- Second: HoverDistort-max -->
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="t2">
+          <animate attributeName="seed" from="2" to="50" dur="5s" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="pass1" in2="t2" scale="33" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+
+    </defs>
+  </svg>
+
+  <script type="module" src="main.js" defer></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/script.js"></script>
+  <script src="js/index.cad48f07.js"></script>
+
+  <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+function magneticEffect(element, strength = 40, easing = 0.15, invert = false) {
+    let mouseX = 0, mouseY = 0;
+    let targetX = 0, targetY = 0;
+
+    const parent = element.closest(".logo");
+
+    // save the base transform from CSS
+    const baseTransform = window.getComputedStyle(element).transform === "none" 
+        ? "" 
+        : window.getComputedStyle(element).transform;
+
+    parent.addEventListener("mousemove", e => {
+        const rect = parent.getBoundingClientRect();
+        const relX = e.clientX - (rect.left + rect.width / 2);
+        const relY = e.clientY - (rect.top + rect.height / 2);
+
+        targetX = (relX / rect.width) * strength * (invert ? -1 : 1);
+        targetY = (relY / rect.height) * strength * (invert ? -1 : 1);
+    });
+
+    parent.addEventListener("mouseleave", () => {
+        targetX = 0;
+        targetY = 0;
+    });
+
+    function animate() {
+        mouseX += (targetX - mouseX) * easing;
+        mouseY += (targetY - mouseY) * easing;
+
+        // Apply GSAP offsets **in addition to** the original CSS transform
+        gsap.set(element, {
+            transform: `${baseTransform} translate(${mouseX}px, ${mouseY}px)`
+        });
+
+        requestAnimationFrame(animate);
+    }
+    animate();
+}
+
+// Apply separately
+magneticEffect(document.querySelector(".logo img"), 35, 0.15);       // img with base centering + rotation
+magneticEffect(document.querySelector(".logo a"), 20, 0.12, true);   // text opposite movement
+</script>
+
+  
+    
+</body>
+</html>

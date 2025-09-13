@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>RoCars</title>
+	<meta name="description" content="cars">
+	<meta name="keywords" content="cars, road, highway, lights, speed">
+	<meta name="author" content="EL-KABOOS">
+	<link rel="shortcut icon" href="assets/RoCars.png">
+	<link rel="stylesheet" href="https://use.typekit.net/kxo3pgz.css">
+	<link rel="stylesheet" type="text/css" href="intro.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+	<script>document.documentElement.className = "js";
+
+var supportsCssVars = function supportsCssVars() {
+  var e,
+      t = document.createElement("style");
+  return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e;
+};
+
+supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+</head>
+
+<body class="demo-1 loading">
+	<main>
+		<div class="absolute">
+			<div class="absolute inset-0 jc">
+			  <div class="bg-shape1 bg-pr o50 bg-blur"></div>
+			  <div class="bg-shape2 bg-gd o50 bg-blur"></div>
+			  <div class="bg-shape1 bg-rd o50 bg-blur"></div>
+			</div>
+		</div>
+		<svg class="circles" width="100%" height="100%" viewBox="0 0 1400 1400">
+			<def>
+				<path id="circle-3" d="M487,700.5A213.5,213.5 0 1 1914,700.5A213.5,213.5 0 1 1487,700.5"></path>
+				<path id="circle-4" d="M567.5,700.5A133,133 0 1 1833.5,700.5A133,133 0 1 1567.5,700.5"></path>
+			</def>
+			<text class="circles__text circles__text--3">
+				<textPath class="circles__text-path" xlink:href="#circle-3" aria-label="" textLength="1341"> a unique way to visit the most popular Auto Shows without leaving your home! </textPath>
+			</text>
+			<text class="circles__text circles__text--4">
+				<textPath class="circles__text-path" xlink:href="#circle-4" aria-label="" textLength="836"> the best place to see top brands new cars! </textPath>
+			</text>
+		</svg>
+
+		<div class="frame"><nav class="frame__links"></nav></div>
+
+		<div class="content">
+			<iframe src="" style="width: 100%; height: 100%; border: none;"></iframe>
+		</div>
+
+		<button class="enter">
+			<div class="enter__bg"> <img src="assets/RoCarsW.png" alt="" srcset=""> <span>RoCars</span> </div>
+		</button>
+		
+	</main>
+	<script src="intro.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        function magneticEffect(element, strength = 50, easing = 0.2) {
+            let mouseX = 0, mouseY = 0;
+            let targetX = 0, targetY = 0;
+        
+            element.parentElement.addEventListener("mousemove", e => {
+                const rect = element.getBoundingClientRect();
+                const relX = e.clientX - (rect.left + rect.width / 2);
+                const relY = e.clientY - (rect.top + rect.height / 2);
+                
+                targetX = (relX / rect.width) * strength;
+                targetY = (relY / rect.height) * strength;
+            });
+        
+            element.parentElement.addEventListener("mouseleave", () => {
+                targetX = 0;
+                targetY = 0;
+            });
+        
+            function animate() {
+                mouseX += (targetX - mouseX) * easing;
+                mouseY += (targetY - mouseY) * easing;
+                gsap.set(element, { x: mouseX, y: mouseY });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+        
+        // Apply magnetic effect separately
+        magneticEffect(document.querySelector(".enter__bg img"), 20, 0.15);
+        magneticEffect(document.querySelector(".enter__bg span"), 80, 0.1);
+    </script>
+
+	<script>
+        function goToSite() {
+          // Play your outro animation here (optional)
+          gsap.to("body", { opacity: 0, duration: 1, delay: .2, /* wait 2 seconds before fading */ onComplete: () => {
+            window.location.href = "src.html"; // redirect after animation
+          }});
+        }
+        
+        // Hook button click
+        document.querySelector(".enter").addEventListener("click", () => {
+          goToSite();
+        });
+    </script>
+
+
+</body>
+
+</html>

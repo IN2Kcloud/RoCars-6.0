@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoCars | STUDIO</title>
+    <link rel="shortcut icon" href="../assets/RoCars.png">
+    <link rel="stylesheet" href="./css/LP.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting@1.1.0/dist/splitting.css">
+	  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css">
+    <link rel="stylesheet" href="./css/styles.css" />
+	  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <script>document.documentElement.className="js";</script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  </head>
+  <body>
+
+  <div class="screen">  
+    <div class="screen-image"></div>  
+    <div class="screen-overlay"></div>  
+    <div class="screen-content"></div>
+  </div>
+<!--
+  <div id="blob"></div> 
+  <div id="blur"></div>
+-->  
+  <section class="LP">
+    <div class="LPBG">
+      <img src="./assets/RoCarsW.png" alt="RoCars">
+    </div>
+    <div class="container">
+      <div class="gallery-container">
+        <div class="logo lg">
+          <span class="lgI">ROCARS</span>
+          <span class="lgIsub">P&nbsp;R&nbsp;O&nbsp;D&nbsp;U&nbsp;C&nbsp;T&nbsp;I&nbsp;O&nbsp;N</span>
+        </div>
+        <div class="gallery"></div>
+      </div>
+      <div class="title-container"></div>
+      <div class="marqueeLP" id="marquee">
+        <div class="marquee-content-LP" id="marqueeContent"></div>
+      </div>
+      <div class="we">Your car, our lens — we don’t film cars, we glorify them.</div>
+    </div>
+
+    <svg style="display: none;">
+      <defs>
+        <filter id="pDistort">
+          <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turb">
+            <animate attributeName="seed" from="2" to="500" dur=".5s" repeatCount="indefinite" />
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="turb" scale="10" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="pDistort-max">
+          <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turb">
+            <animate attributeName="seed" from="2" to="500" dur=".25s" repeatCount="indefinite" />
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="turb" scale="20" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+
+    <svg id="filters" style="display: none;">
+        <filter id="text-distortion-max">
+          <feTurbulence id="text-turbulence-max" type="turbulence" baseFrequency="0.8" numOctaves="2" result="turbulence" />
+          <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="20" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="text-distortion">
+          <feTurbulence id="text-turbulence" type="turbulence" baseFrequency="0.2" numOctaves="2" result="turbulence" />
+          <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
+  </section>
+
+  <section>
+
+        <div class="rs"> <span class="rsI">ROCARS <!--<span class="rsI">PRODUCTION</span> <span class="rsI">YOUR CAR</span> <span class="rsI">OUR LENS</span> <span class="rsI">PURE EMOTION</span>--> <span class="rsIsub">P     R     O     D     U     C     T     I     O     N</span></span>  <br> <span class="rsII">Your car | our lens<br> <div class="rsIIsub"><div class="reverse"><div class="reverse-line"></div><div class="reverse-head"></div></div> <div class="arrow-loop"><div class="line"></div><div class="head"></div></div> </div> </span> <span class="rsII-portrait">Your car <br>|<br> our lens </span> </div>
+        
+        <div class="main">
+		    	
+		    	<div class="stack-wrap" aria-hidden="true">
+		    		<div class="stack" id="stack-1">
+		    			<img class="stack__img" src="./img/1.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/2.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/3.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/4.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/5.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/6.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/7.jpg" alt="Some image" />
+		    		</div>
+		    		<div class="stack" id="stack-2">
+		    			<img class="stack__img" src="./img/8.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/9.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/10.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/11.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/12.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/13.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/14.jpg" alt="Some image" />
+		    		</div>
+		    		<div class="stack" id="stack-3">
+		    			<img class="stack__img" src="./img/15.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/16.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/17.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/18.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/19.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/20.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/21.jpg" alt="Some image" />
+		    		</div>
+		    		<div class="stack" id="stack-4">
+		    			<img class="stack__img" src="./img/22.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/23.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/24.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/25.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/26.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/27.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/28.jpg" alt="Some image" />
+		    		</div>
+		    		<div class="stack" id="stack-5">
+		    			<img class="stack__img" src="./img/29.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/30.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/31.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/32.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/33.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/34.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/35.jpg" alt="Some image" />
+		    		</div>
+		    		<div class="stack" id="stack-6">
+		    			<img class="stack__img" src="./img/36.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/37.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/38.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/39.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/40.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/41.jpg" alt="Some image" />
+		    			<img class="stack__img" src="./img/42.jpg" alt="Some image" />
+		    		</div>
+		    	</div>
+		    	<nav class="menu menu--open">
+		    		<a class="menu__item" data-stack="stack-1" data-content="content-1">Vision</a>
+		            <a class="menu__item" data-stack="stack-2" data-content="content-2">Production</a>
+		            <a class="menu__item" data-stack="stack-3" data-content="content-3">Editing</a>
+		            <a class="menu__item" data-stack="stack-4" data-content="content-4">Sound Design</a>
+		            <a class="menu__item" data-stack="stack-5" data-content="content-5">Client Cars</a>
+		            <a class="menu__item" data-stack="stack-6" data-content="content-6">Studio Reel</a>
+		    	</nav>
+    
+		    	<div class="content-wrap">
+	            	<div class="content" id="content-1">
+	            		<h2 class="content__title">Vision</h2>
+	            		<p class="content__text">
+	            			We don't just film cars — we immortalize machines in motion. Every frame is designed to stir emotion and ignite desire.
+	            		</p>
+	            	</div>
+	            	<div class="content" id="content-2">
+	            		<h2 class="content__title">Production</h2>
+	            		<p class="content__text">
+	            			From rolling shots on desert highways to dramatic studio rigs — we craft every scene with precision and grit.
+	            		</p>
+	            	</div>
+	            	<div class="content" id="content-3">
+	            		<h2 class="content__title">Editing</h2>
+	            		<p class="content__text">
+	            			We cut with rhythm, color with mood, and sync motion with pulse. Each edit is a signature — unmistakably RoCars.
+	            		</p>
+	            	</div>
+	            	<div class="content" id="content-4">
+	            		<h2 class="content__title">Sound Design</h2>
+	            		<p class="content__text">
+	            			Every roar, rev, and whisper counts. We sculpt the sonic identity of your car with custom sound layers and cinematic mixes.
+	            		</p>
+	            	</div>
+	            	<div class="content" id="content-5">
+	            		<h2 class="content__title">Client Cars</h2>
+	            		<p class="content__text">
+	            			From rare hypercars to street-built legends — we shoot client cars like heroes, because every car deserves its story.
+	            		</p>
+	            	</div>
+	            	<div class="content" id="content-6">
+	            		<h2 class="content__title">Studio Reel</h2>
+	            		<p class="content__text">
+	            			The roar. The polish. The legacy. Watch our latest studio reel — a fusion of horsepower, art, and obsession.
+	            		</p>
+	            	</div>
+            
+	            	<button class="unbutton close"><span class="close__cross">&#10539;</span><span>Close</span></button>
+	            </div>
+		    	<svg class="circle" vector-effect="non-scaling-stroke" width="1600" height="1600"><circle vector-effect="non-scaling-stroke" cx="800" cy="800" r="330" data-svg-origin="800 800" transform="matrix(1,0,0,1,0,0)" style="transform-origin: 0px 0px;"></circle></svg>
+		    </div>
+
+        <div class="inversion-lens">
+          <img src="./assets/portrait.jpeg" alt="RoCars studios" />
+          <div class="rss"> 
+            Welcome to **RoCars Studio**, where horsepower meets cinematic excellence. We specialize in high-end video production tailored exclusively for supercars, classic legends, and luxury automotive brands. From adrenaline-fueled motion shots to sleek showroom visuals, our studio captures every curve, roar, and reflection with precision. Whether it's promotional content, launch films, or social-ready reels, we craft powerful visual stories that drive emotion and elevate your brand on every screen.
+          </div>
+        </div>
+
+        <svg id="filters" style="display: none;">
+          <filter id="text-distortion-max">
+            <feTurbulence id="text-turbulence-max" type="turbulence" baseFrequency="0.8" numOctaves="2" result="turbulence" />
+            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="20" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+          <filter id="text-distortion">
+            <feTurbulence id="text-turbulence" type="turbulence" baseFrequency="0.2" numOctaves="2" result="turbulence" />
+            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </svg>
+
+        <svg class="max-txt" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+		      <defs>
+			      <filter id="imgFilter">
+				      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turbulence1">
+				  	    <animate attributeName="seed" from="2" to="50" dur="10s" repeatCount="indefinite" />
+				      </feTurbulence>
+				      <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="20" xChannelSelector="R" yChannelSelector="G" />
+			      </filter>
+            <!-- Morphing transition filter
+            <filter id="morphFilter">
+              <feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="2" result="turbulence"/>
+              <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="5" />
+            </filter>
+             -->
+            <filter id="minFilter">
+				      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turbulence1">
+				  	    <animate attributeName="seed" from="2" to="50" dur="10s" repeatCount="indefinite" />
+				      </feTurbulence>
+				      <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="10" xChannelSelector="R" yChannelSelector="G" />
+			      </filter>
+		      </defs>
+	      </svg>
+
+    </section>
+    
+    <section class="trail-container">    
+
+	    <!-- Large Distorted Text -->
+	    <svg class="max-txt-trial" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+		    <defs>
+			    <filter id="imgFilter">
+				    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turbulence1">
+					    <animate attributeName="seed" from="2" to="50" dur="10s" repeatCount="indefinite" />
+				    </feTurbulence>
+				    <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="20" xChannelSelector="R" yChannelSelector="G" />
+			    </filter>
+		    </defs>
+		    <text class="rotate-on-portrait" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#fff" filter="url(#imgFilter)">
+			    ROCARS
+		    </text>
+	    </svg>
+
+	    <!-- Smaller Bottom Text -->
+	    <svg class="min-txt-trial" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+		    <defs>
+			    <filter id="minFilter">
+				    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turbulence1">
+					    <animate attributeName="seed" from="2" to="50" dur="10s" repeatCount="indefinite" />
+				    </feTurbulence>
+				    <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="10" xChannelSelector="R" yChannelSelector="G" />
+			    </filter>
+		    </defs>
+		    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#111" filter="url(#minFilter)">
+			    JUST TAKE A MOVE !
+		    </text>
+	    </svg>
+
+		<div class="marquee-trial-II">
+          <div class="marquee-trial-content-II">
+            <span>
+              &nbsp; Welcome to **RoCars Studio**, where horsepower meets cinematic excellence! &nbsp; • &nbsp; Welcome to **RoCars Studio**, where horsepower meets cinematic excellence! &nbsp; • 
+              &nbsp; Welcome to **RoCars Studio**, where horsepower meets cinematic excellence! &nbsp; • &nbsp; Welcome to **RoCars Studio**, where horsepower meets cinematic excellence! &nbsp; • 
+              &nbsp; impulse &nbsp; • &nbsp; independent online store &nbsp; • &nbsp;
+              you can't download the experience &nbsp;
+            </span>
+          </div>
+        </div>
+		<div class="marquee-trial">
+          <div class="marquee-trial-content">
+            <span>
+              &nbsp; Welcome to **RoCars Studio**, where horsepower meets cinematic excellence! &nbsp; • &nbsp; Welcome to **RoCars Studio**, where horsepower meets cinematic excellence! &nbsp; • 
+              &nbsp; Welcome to **RoCars Studio**, where horsepower meets cinematic excellence! &nbsp; • &nbsp; Welcome to **RoCars Studio**, where horsepower meets cinematic excellence! &nbsp; • 
+              &nbsp; impulse &nbsp; • &nbsp; independent online store &nbsp; • &nbsp;
+              you can't download the experience &nbsp;
+            </span>
+          </div>
+        </div>
+
+    </section>
+
+    <section class="demo-2">
+      <header class="frame">
+        <h1 class="frame__title hover-effect hover-effect--bg">ROCARS STUDIOS   <a class="hover-effect hover-effect--bg" href="../index.html">#RoCars</a></h1> 
+        <a class="frame__back hover-effect hover-effect--bg" href="../cars/index.html">CARS</a>
+        <a class="frame__archive hover-effect hover-effect--bg" href="../brands/index.html">BRANDS</a>
+        <a class="frame__github hover-effect hover-effect--bg" href="../store/index.html">STORE</a>
+      </header>
+
+      <div class="marquee">
+        <div class="marquee-content">
+          <span>
+            Creative &nbsp;
+            <div class="marquee-img"><img src="./assets/projects-preview.gif" alt="" /></div> &nbsp; Media Technology &nbsp;
+            <div class="marquee-img"><img src="./assets/projects-preview-II.gif" alt="" /></div> &nbsp; Creative &nbsp;
+            <div class="marquee-img"><img src="./assets/projects-preview-III.gif" alt="" /></div> &nbsp; Media Technology &nbsp;
+            <div class="marquee-img"><img src="./assets/projects-preview-IIII.gif" alt="" /></div> &nbsp; Creative &nbsp;
+            <div class="marquee-img"><img src="./assets/projects-preview.gif" alt="" /></div> &nbsp; Media
+          </span>
+          <!-- Duplicate for seamless loop -->
+          <span>
+            Creative &nbsp;
+            <img src="./assets/projects-preview.gif" alt="" /> &nbsp; Media Technology &nbsp;
+            <img src="./assets/projects-preview-II.gif" alt="" /> &nbsp; Creative &nbsp;
+            <img src="./assets/projects-preview-III.gif" alt="" /> &nbsp; Media Technology &nbsp;
+            <img src="./assets/projects-preview-IIII.gif" alt="" /> &nbsp; Creative &nbsp;
+            <img src="./assets/projects-preview.gif" alt="" /> &nbsp; Media
+          </span>
+        </div>
+      </div>
+
+      <div class="footer">
+        <h2 class="footer__title">PORTFOLIO</h2>
+        <ul class="list list--bg list--bg-west">
+          <a href="https://www.youtube.com/@RoCarsTV" target="_blank">
+            <li class="list__item">
+              <span class="list__item-col hover-effect hover-effect--bg">YOUTUBE</span>
+              <span class="list__item-col hover-effect hover-effect--bg">@RoCarsTV</span>
+              <span class="list__item-col hover-effect hover-effect--bg">/</span>
+              <span class="list__item-col hover-effect hover-effect--bg">/</span>
+            </li>
+          </a>
+          <a href="https://www.instagram.com/rocarstv" target="_blank">
+            <li class="list__item">
+              <span class="list__item-col hover-effect hover-effect--bg">INSTAGRAM</span>
+              <span class="list__item-col hover-effect hover-effect--bg">@rocarstv</span>
+              <span class="list__item-col hover-effect hover-effect--bg">/</span>
+              <span class="list__item-col hover-effect hover-effect--bg">/</span>
+            </li>
+          </a>  
+          <a href="https://www.tiktok.com/@b.rocars" target="_blank">
+            <li class="list__item">
+              <span class="list__item-col hover-effect hover-effect--bg">TIKTOK</span>
+              <span class="list__item-col hover-effect hover-effect--bg">@b.rocars</span>
+              <span class="list__item-col hover-effect hover-effect--bg">/</span>
+              <span class="list__item-col hover-effect hover-effect--bg">/</span>
+            </li>
+          </a>  
+        </ul>
+        <h2 class="footer__title">Selected Clients</h2>
+        <ul class="list list--bg list--bg-west">
+            <li class="list__item">
+              <span class="list__item-col hover-effect hover-effect--bg">MANSORY</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Munich</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Germany</span>
+              <span class="list__item-col hover-effect hover-effect--bg">1989</span>
+            </li>
+            <li class="list__item">
+              <span class="list__item-col hover-effect hover-effect--bg">ONYX concept</span>
+              <span class="list__item-col hover-effect hover-effect--bg">London</span>
+              <span class="list__item-col hover-effect hover-effect--bg">UK</span>
+              <span class="list__item-col hover-effect hover-effect--bg">2002</span>
+            </li>
+            <li class="list__item">
+              <span class="list__item-col hover-effect hover-effect--bg">TopCar Design</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Los Angeles</span>
+              <span class="list__item-col hover-effect hover-effect--bg">USA</span>
+              <span class="list__item-col hover-effect hover-effect--bg">2004</span>
+            </li>
+        </ul>
+        <h2 class="footer__title">CONTACT</h2>
+        <ul class="list list--bg list--bg-west">
+          <a href="https://wa.me/+4915161936805" target="_blank">
+            <li class="list__item">
+              <span class="list__item-col hover-effect hover-effect--bg">WhatsApp</span>
+              <span class="list__item-col hover-effect hover-effect--bg">+49 1516 1936805</span>
+              <span class="list__item-col hover-effect hover-effect--bg">@rocars</span>
+              <span class="list__item-col hover-effect hover-effect--bg">/</span>
+            </li>
+          </a>  
+          <a href="https://t.me/RoCars_TV" target="_blank">
+            <li class="list__item">
+              <span class="list__item-col hover-effect hover-effect--bg">Telegram</span>
+              <span class="list__item-col hover-effect hover-effect--bg">+49 1516 1936805</span>
+              <span class="list__item-col hover-effect hover-effect--bg">@RoCars_TV</span>
+              <span class="list__item-col hover-effect hover-effect--bg">/</span>
+            </li>
+          </a>  
+          <a href="mailto:rocarsinfo@gmail.com" target="_blank">
+            <li class="list__item">
+              <span class="list__item-col hover-effect hover-effect--bg">Gmail</span>
+              <span class="list__item-col hover-effect hover-effect--bg">rocarsinfo@gmail.com</span>
+              <span class="list__item-col hover-effect hover-effect--bg">/</span>
+              <span class="list__item-col hover-effect hover-effect--bg">/</span>
+            </li>
+          </a>  
+        </ul>
+      </div>
+      <svg class="min-txt" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+		    <defs>
+			    <filter id="minFilter">
+				    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turbulence1">
+					    <animate attributeName="seed" from="2" to="50" dur="10s" repeatCount="indefinite" />
+				    </feTurbulence>
+				    <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="10" xChannelSelector="R" yChannelSelector="G" />
+			    </filter>
+		    </defs>
+	    </svg>
+    </section>
+  
+    <script type="module" src="./js/LP.js"></script>
+  
+    <!-- Load Three.js and lil-gui from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lil-gui@0.18"></script>
+  
+    <!-- RS (no type="module") -->
+    <script type="module" src="./js/rs.js"></script>
+    <script src="./js/shaders.js"></script>
+    <script src="./js/script.js"></script>
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> -->
+
+	<!-- JavaScript dependencies -->
+    <!-- GSAP library -->
+    <script src="js/gsap.min.js"></script>
+
+    <!-- SplitType for text manipulation: https://github.com/lukePeavey/SplitType -->
+    <script src="js/split-type.min.js"></script>
+
+    <!-- Scripts for the effect -->
+    <script type="module" src="js/effect-2/index.js"></script>
+    
+  </body>
+</html>
