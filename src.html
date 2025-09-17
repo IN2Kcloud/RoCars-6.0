@@ -44,7 +44,10 @@
     <div class="tv-wrapper">
       <div id="window" class="tv-window">
         <div class="vhs-effect">
-          <video id="window-video" autoplay loop muted playsinline src="assets/RoCars.mp4"></video>
+          <video id="window-video" autoplay muted playsinline loop preload="auto" webkit-playsinline>
+            <source src="assets/RoCars.mp4" type="video/mp4">
+            Your browser does not support video.
+          </video>
           <div id="window-text">X</div>
           <div class="vhs-scanlines"></div>
           <div class="tv-static"></div>
@@ -58,7 +61,7 @@
     </div>
 
     <div class="video-glitch-wrapper">
-      <video autoplay muted loop playsinline>
+      <video autoplay muted loop playsinline preload="auto" webkit-playsinline>
         <source src="./assets/RoCars.mp4" type="video/mp4" />
       </video>
     </div>
