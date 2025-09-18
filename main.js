@@ -186,3 +186,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const vid = document.getElementById("window-video");
+  if (vid) {
+    vid.play().catch(() => {
+      // Safari/Edge blocked autoplay, try mute & play again
+      vid.muted = true;
+      vid.play().catch(() => {});
+    });
+  }
+});
