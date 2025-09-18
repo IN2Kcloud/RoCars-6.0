@@ -248,7 +248,8 @@ body {
 .tv-window:hover .tv-static { opacity: 0.35; }
 */
 @media only screen and (max-device-width: 500px){
-	.tv-window { width: 200px; /*left: 50%; transform: translateX(-50%);*/}
+	.tv-window, .tv-wrapper { width: 100px; /*left: 50%; transform: translateX(-50%);*/}
+  .tv-wrapper {bottom: 5vh;}
   .logo-glitch-wrapper {width: 150vw; }
 }
 
@@ -431,7 +432,7 @@ a:hover,a:focus {color:#000;outline:none;}
   .menu-wrap { top:4em; }
   .marquee span,.menu__item-link {font-size:4vw;line-height:2;}
   .logo a,.menu-logo a {font-size:33px;}
-  .menu-toggle{top: 0%;}
+  .menu-toggle{top: 20px;}
   .col-1 {bottom:5%;}
   .header {display: none;}
 }
