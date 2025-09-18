@@ -249,7 +249,7 @@ body {
 */
 @media only screen and (max-device-width: 500px){
 	.tv-window, .tv-wrapper { width: 100px; /*left: 50%; transform: translateX(-50%);*/}
-  .tv-wrapper {bottom: 5vh;}
+  .tv-wrapper {bottom: 10vh;}
   .logo-glitch-wrapper {width: 150vw; }
 }
 
