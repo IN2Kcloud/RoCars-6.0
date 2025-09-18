@@ -319,7 +319,7 @@ p {
 
 .car{
   position: absolute;
-  top: 33%;
+  top: 30%;
   left: 50%;
   max-width: 400px;
   gap: 4px;
@@ -338,15 +338,15 @@ p {
 
 .model-name {font-size: 1em;}
 .img-preview {
-  top: 70%;
+  top: 68%;
   left: 50%;
-  width: 75%;
+  width: 90%;
   height: auto;   
 }
 .minimap {
   top: auto;
   right: auto;
-  bottom: 3em;
+  bottom: 10vh;
   left: 50%;
   touch-action: none;
 }
@@ -359,8 +359,21 @@ p {
 }
 
 @media (max-width: 500px) and (max-height: 800px) {
+
+  .car{
+  top: 28%;
+  gap: 3px;
+  }
+
+  .img-preview {
+  top: 64%;
+  left: 50%;
+  width: 75%;
+  height: auto;   
+  }
+
   .minimap {
-  bottom: 2em;
+  bottom: 10vh;
   }
   .car-order a{
   font-size: 1rem;
