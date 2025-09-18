@@ -188,12 +188,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const vid = document.getElementById("window-video");
-  if (vid) {
-    vid.play().catch(() => {
-      // Safari/Edge blocked autoplay, try mute & play again
-      vid.muted = true;
-      vid.play().catch(() => {});
-    });
-  }
+  const videos = [
+    document.getElementById("window-video"),
+    document.getElementById("glitch-video")
+  ];
+
+  videos.forEach(vid => {
+    if (vid) {
+      vid.play().catch(() => {
+        vid.muted = true; // force mute if needed
+        vid.play().catch(() => {});
+      });
+    }
+  });
 });
