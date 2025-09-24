@@ -324,11 +324,14 @@ p {
   max-width: 400px;
   gap: 4px;
 }
-  .car-details {
-  height:fit-content;
+.car-details {
+  height:40vh;
   width: 350px;
   padding: .5em;
   border: 2px solid #eee;
+}
+.car-highlight {
+    visibility: hidden;
 }
 .car-order a{
   padding: .2em;
@@ -338,15 +341,15 @@ p {
 
 .model-name {font-size: 1em;}
 .img-preview {
-  top: 68%;
+  top: 64%;
   left: 50%;
-  width: 90%;
+  width: 82%;
   height: auto;   
 }
 .minimap {
   top: auto;
   right: auto;
-  bottom: 10vh;
+  bottom: 14vh;
   left: 50%;
   touch-action: none;
 }
@@ -358,6 +361,28 @@ p {
 }
 }
 
+@media (max-width: 500px) and (min-height: 900px) {
+  .car-details {
+  height:36vh;
+  width: 350px;
+  padding: .5em;
+  border: 2px solid #eee;
+}
+  .img-preview {
+  top: 64%;
+  left: 50%;
+  width: 82%;
+  height: auto;   
+}
+  .minimap {
+  top: auto;
+  right: auto;
+  bottom: 14vh;
+  left: 50%;
+  touch-action: none;
+}
+
+}
 @media (max-width: 500px) and (max-height: 800px) {
 
   .car{
@@ -366,20 +391,21 @@ p {
   }
 
   .img-preview {
-  top: 64%;
+  top: 60%;
   left: 50%;
   width: 75%;
   height: auto;   
   }
 
   .minimap {
-  bottom: 10vh;
+  bottom: 15vh;
   }
   .car-order a{
   font-size: 1rem;
   }
   .car-details {
   font-size: .8rem;
+  height:33vh;
   }
   .car-details h1 {
         font-size: 1.2em;
