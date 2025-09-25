@@ -476,7 +476,7 @@ a:hover,a:focus {color:#000;outline:none;}
 .loading{display:flex;align-items:center;justify-content:center;position:fixed;top:0;right:0;bottom:0;left:0;z-index:100; background:#ffa666; opacity:0; transition:0.5s;}
 .before-load .loading{opacity:1;}
 .loading-circle {position: relative; width: 25vw;}
-.backp { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Morbid Bones Brush Slant DEMO','LEMONMILK-Regular','Roboto',sans-serif; font-size: 7rem; cursor: progress; text-align: center; width: 25vw; /*filter: url(#minFilter);*/ }
+.backp { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Morbid Bones Brush Slant DEMO','LEMONMILK-Regular','Roboto',sans-serif; font-size: 5rem; cursor: progress; text-align: center; width: 25vw; /*filter: url(#minFilter);*/ }
 .loading-bg {
   position: absolute;
   inset: 0; /* fill parent */
