@@ -126,7 +126,7 @@ a{text-decoration:none;color:var(--color-link);outline:none;}a:hover{color:#ffa6
 @font-face{font-family:'Morbid Bones Brush Slant DEMO';src:url('../assets/Morbid\ Bones\ Brush\ Slant\ DEMO.ttf') format('truetype');font-display:swap;}
 .loading{display:flex;align-items:center;justify-content:center;position:fixed;top:0;right:0;bottom:0;left:0;z-index:100; background:#ffa666; opacity:0; transition:0.5s;}
 .before-load .loading{opacity:1;}
-.backp { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Morbid Bones Brush Slant DEMO','LEMONMILK-Regular','Roboto',sans-serif; font-size: 7rem; font-weight: 500; cursor: pointer; width: fit-content; filter: url(#minFilter); }
+.backp { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Morbid Bones Brush Slant DEMO','LEMONMILK-Regular','Roboto',sans-serif; font-size: 5rem; font-weight: 500; cursor: pointer; width: fit-content; filter: url(#minFilter); }
 .backp::before { content: ''; position: absolute; z-index: 1; top: 45%; bottom: 45%; left: -0.25em; right: -0.25em; background-color: #eee; border: 3px solid #000; filter: url(#minFilter); animation: fullSweep 2s ease-in-out infinite; }
 @keyframes fullSweep { 0% { transform-origin: left; transform: scaleX(0); } 33.333% { transform-origin: left; transform: scaleX(1); } 33.334% { transform-origin: right; transform: scaleX(1); } 66.666% { transform-origin: right; transform: scaleX(0); } 100% { transform-origin: right; transform: scaleX(0); } }
 @media (max-width:500px) { .backp { font-size: 2rem; } .backp::before {top: 33%; bottom: 33%;}}
