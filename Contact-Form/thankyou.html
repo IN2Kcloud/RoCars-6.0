@@ -21,8 +21,6 @@
       font-size: 5rem;
       overflow: hidden;
     }
-    body::before{content:'';position:fixed;top:-100%;left:-50%;width:300%;height:300%;background-image:url(../../assets/noise.png);opacity:1;animation:grain 8s steps(10) infinite;}
-    @keyframes grain{0%,100%{transform:translate(0,0);}10%{transform:translate(-5%,-10%);}20%{transform:translate(-15%,5%);}30%{transform:translate(7%,-25%);}40%{transform:translate(-5%,25%);}50%{transform:translate(-15%,10%);}60%{transform:translate(15%,0%);}70%{transform:translate(0%,15%);}80%{transform:translate(3%,35%);}90%{transform:translate(-10%,10%);}}
     
     p{filter: url(#pDistort);}
     .mainp{color: #eee;}
