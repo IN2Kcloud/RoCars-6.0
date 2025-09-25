@@ -20,7 +20,8 @@
 <body class="before-load">
 	  <div class="loading">
       <div class="loading-circle">
-      <p class="backp">ROCARS !</p>
+        <p class="backp">ROCARS !</p>
+        <span class="loading-bg"></span>
       </div>
     </div>
 <!--
@@ -48,11 +49,27 @@
             <source src="assets/RoCars.mp4" type="video/mp4">
             Your browser does not support video.
           </video>
-          <div id="window-text">X</div>
+          <div id="window-text">ROCARS</div>
           <div class="vhs-scanlines"></div>
           <div class="tv-static"></div>
         </div>
       </div>
+    </div>
+
+    <!-- ARROWS 
+    <div class="down-arrows">
+      <span class="discover">DISCOVER</span>
+      <span class="arrow"><img src="assets/bottom.svg" alt="DISCOVER!"></span>
+      <span class="arrow"><img src="assets/bottom.svg" alt="DISCOVER!"></span>
+      <span class="arrow"><img src="assets/bottom.svg" alt="DISCOVER!"></span>
+    </div>
+     -->
+
+    <!--CIRCLES-->
+    <div class="pulse-circles">
+      <span class="circle"></span>
+      <span class="circle"></span>
+      <span class="circle"></span>
     </div>
 
 	  <div class="logo-glitch-wrapper">
@@ -254,13 +271,6 @@
 
   <svg class="max-txt" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
     <defs>
-      
-      <filter id="minFilter">
-        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turbulence1">
-    	    <animate attributeName="seed" from="2" to="50" dur="10s" repeatCount="indefinite" />
-        </feTurbulence>
-        <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="10" xChannelSelector="R" yChannelSelector="G" />
-      </filter>
 
       <filter id="HoverDistort">
         <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turb">
