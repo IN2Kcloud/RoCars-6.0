@@ -103,6 +103,64 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
         document.querySelector(".enter").addEventListener("click", () => {
           goToSite();
         });
+
+		// MOBILE
+
+        function enableTouchHoverAndHoldClick(selector, holdTime = 600) {
+          const elements = document.querySelectorAll(selector);
+        
+          elements.forEach(el => {
+            let holdTimer;
+            let isHovering = false;
+            let didClick = false;
+        
+            el.addEventListener("touchstart", (e) => {
+              e.preventDefault(); // prevent scroll conflict
+        
+              // Apply hover immediately
+              if (!isHovering) {
+                el.classList.add("hover");
+                isHovering = true;
+              }
+        
+              didClick = false;
+        
+              // Start hold timer → trigger click if held long enough
+              holdTimer = setTimeout(() => {
+                el.click();
+                didClick = true;
+              }, holdTime);
+            });
+        
+            el.addEventListener("touchend", () => {
+              clearTimeout(holdTimer);
+        
+              // If it was only a quick tap → just keep hover a bit
+              if (!didClick) {
+                setTimeout(() => {
+                  el.classList.remove("hover");
+                  isHovering = false;
+                }, 300);
+              }
+              // If it triggered click, also remove hover after a bit
+              else {
+                setTimeout(() => {
+                  el.classList.remove("hover");
+                  isHovering = false;
+                }, 500);
+              }
+            });
+        
+            el.addEventListener("touchmove", () => {
+              clearTimeout(holdTimer); // cancel click if finger moves
+            });
+          });
+        }
+        
+        // Apply to your enter button
+        enableTouchHoverAndHoldClick(".enter");
+
+
     </script>
 
 
