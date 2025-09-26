@@ -214,9 +214,3 @@ a:focus-visible {
 	.enter { width: 90px; height: 90px; left: calc(50% - 90px / 2 ); top: calc(50% - 90px / 2 ); }
 	.enter__bg span {font-size: 2rem;}
  }
-
-.enter.hover .enter__bg img,
-.enter.hover .enter__bg span {
-  transform: scale(1.05); /* your hover style */
-  transition: transform 0.3s ease;
-}
