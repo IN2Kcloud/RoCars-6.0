@@ -190,7 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const videos = [
     document.getElementById("window-video"),
-    document.getElementById("glitch-video")
+    document.getElementById("glitch-video"),
+    document.getElementById("video-wrapper")
   ];
 
   videos.forEach(vid => {
