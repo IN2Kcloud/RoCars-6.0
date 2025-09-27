@@ -90,7 +90,7 @@ a{text-decoration:none;color:var(--color-link);outline:none;}a:hover{color:#ffa6
   body{width: 100vw; overflow-x: hidden !important;}
 
   .main{width:80vw; top:5%; right:10vw; transform:translate(10%,0%); transform-origin: center; }
-  .menu {opacity: 1;}
+  /*.menu {opacity: 1;}*/
   .menu__item {font-size: 2rem;}
   .menu__item::before{top:40%;bottom:40%;}
   .content__title{font-size: 2.5rem;}
