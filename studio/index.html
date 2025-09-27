@@ -50,7 +50,7 @@
       </div>
       <div class="we">Your car, our lens — we don’t film cars, we glorify them.</div>
     </div>
-
+<!--
     <svg style="display: none;">
       <defs>
         <filter id="pDistort">
@@ -78,6 +78,7 @@
           <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" xChannelSelector="R" yChannelSelector="G" />
         </filter>
     </svg>
+-->
   </section>
 
   <section>
@@ -211,7 +212,7 @@
             <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" xChannelSelector="R" yChannelSelector="G" />
           </filter>
         </svg>
-
+<!--
         <svg class="max-txt" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
 		      <defs>
 			      <filter id="imgFilter">
@@ -220,12 +221,7 @@
 				      </feTurbulence>
 				      <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="20" xChannelSelector="R" yChannelSelector="G" />
 			      </filter>
-            <!-- Morphing transition filter
-            <filter id="morphFilter">
-              <feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="2" result="turbulence"/>
-              <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="5" />
-            </filter>
-             -->
+
             <filter id="minFilter">
 				      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turbulence1">
 				  	    <animate attributeName="seed" from="2" to="50" dur="10s" repeatCount="indefinite" />
@@ -234,37 +230,21 @@
 			      </filter>
 		      </defs>
 	      </svg>
-
+-->
     </section>
     
     <section class="trail-container">    
 
 	    <!-- Large Distorted Text -->
 	    <svg class="max-txt-trial" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
-		    <defs>
-			    <filter id="imgFilter">
-				    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turbulence1">
-					    <animate attributeName="seed" from="2" to="50" dur="10s" repeatCount="indefinite" />
-				    </feTurbulence>
-				    <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="20" xChannelSelector="R" yChannelSelector="G" />
-			    </filter>
-		    </defs>
-		    <text class="rotate-on-portrait" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#fff" filter="url(#imgFilter)">
+		    <text class="rotate-on-portrait" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#fff">
 			    ROCARS
 		    </text>
 	    </svg>
 
 	    <!-- Smaller Bottom Text -->
 	    <svg class="min-txt-trial" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
-		    <defs>
-			    <filter id="minFilter">
-				    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turbulence1">
-					    <animate attributeName="seed" from="2" to="50" dur="10s" repeatCount="indefinite" />
-				    </feTurbulence>
-				    <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="10" xChannelSelector="R" yChannelSelector="G" />
-			    </filter>
-		    </defs>
-		    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#111" filter="url(#minFilter)">
+		    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#111">
 			    JUST TAKE A MOVE !
 		    </text>
 	    </svg>
@@ -399,6 +379,7 @@
           </a>  
         </ul>
       </div>
+      <!--
       <svg class="min-txt" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
 		    <defs>
 			    <filter id="minFilter">
@@ -409,6 +390,7 @@
 			    </filter>
 		    </defs>
 	    </svg>
+      -->
     </section>
   
     <script type="module" src="./js/LP.js"></script>
