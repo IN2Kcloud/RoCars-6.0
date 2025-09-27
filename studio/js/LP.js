@@ -426,6 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // animate DISTORTION
+/*
 const turbulencemax = document.getElementById("text-turbulence-max");
 const turbulence = document.getElementById("text-turbulence");
   let frame = 0;
@@ -440,3 +441,4 @@ const turbulence = document.getElementById("text-turbulence");
   }
 
   animate();
+  */
