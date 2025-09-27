@@ -163,22 +163,6 @@ function initHoverEffect(container) {
   };
 }
 
-// TEXT DISTORTION
-const turbulencemax = document.getElementById("text-turbulence-max");
-const turbulence = document.getElementById("text-turbulence");
-  let frame = 0;
-
-  function animate() {
-    frame += 0.02;
-    const freq = 0.05 + Math.sin(frame) * 0.01;
-    turbulencemax.setAttribute("baseFrequency", freq);
-    turbulence.setAttribute("baseFrequency", freq);
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-
   // SECTION 03
 
   document.addEventListener("DOMContentLoaded", () => {
