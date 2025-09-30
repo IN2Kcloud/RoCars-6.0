@@ -1,9 +1,48 @@
+/*
 window.addEventListener('load', () => {
   document.body.classList.remove('before-load');
 });
 
 document.querySelector('.loading').addEventListener('transitionend', (e) => {
   document.body.removeChild(e.currentTarget);
+});
+*/
+// Helper: Wait for all images, videos, and fonts to fully load
+function waitForAllResources() {
+  const images = Array.from(document.images).map(img => {
+    if (img.complete) return Promise.resolve();
+    return new Promise(resolve => {
+      img.addEventListener('load', resolve);
+      img.addEventListener('error', resolve);
+    });
+  });
+
+  const videos = Array.from(document.querySelectorAll('video')).map(video => {
+    if (video.readyState >= 3) return Promise.resolve();
+    return new Promise(resolve => {
+      video.addEventListener('loadeddata', resolve);
+      video.addEventListener('error', resolve);
+    });
+  });
+
+  const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+
+  return Promise.all([...images, ...videos, fonts]);
+}
+
+// Start loading process
+window.addEventListener('load', () => {
+  // wait until literally everything is ready
+  waitForAllResources().then(() => {
+    document.body.classList.remove('before-load');
+  });
+});
+
+// When transition of loader ends, remove it from DOM
+document.querySelector('.loading').addEventListener('transitionend', (e) => {
+  if (e.propertyName === 'opacity') { // ensure it's the fade-out transition
+    document.body.removeChild(e.currentTarget);
+  }
 });
 
 {
