@@ -26,6 +26,8 @@
 
 body { font-family: 'LEMONMILK-Regular', 'Roboto', sans-serif; overflow-x: hidden;}
 
+svg {position: absolute; top: 0; left: 0;}
+
 @font-face{font-family:'LEMONMILK-Regular';src:url('assets/LEMONMILK-Regular.otf') format('opentype');font-display:swap;}
 @font-face{font-family:'Border';src:url('assets/Border.ttf') format('truetype');font-display:swap;}
 @font-face{font-family:'Barett';src:url('assets/Barett\ Street.ttf') format('truetype');font-display:swap;}
