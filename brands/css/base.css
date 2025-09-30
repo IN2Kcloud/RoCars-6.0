@@ -300,8 +300,8 @@ a.content__text-link[data-fx="14"]:hover::after {
 }
 
 /* Loader CSS */
-.loadinger{display:flex;align-items:center;justify-content:center;position:fixed;top:0;right:0;bottom:0;left:0;z-index:100;background:#ffa666;opacity:0;transition:0.5s;}
-.before-load .loadinger{opacity:1;}
+.loading{display:flex;align-items:center;justify-content:center;position:fixed;top:0;right:0;bottom:0;left:0;z-index:100;background:#ffa666;opacity:0;transition:0.5s;}
+.before-load .loading{opacity:1;}
 /*@keyframes loading-spin{100%{transform:rotate(360deg);}}*/
 @keyframes loading-circle-ani{0%{stroke-dashoffset:157;}75%{stroke-dashoffset:-147;}100%{stroke-dashoffset:-157;}}
 .loading-circle{ aspect-ratio: 1/1; width:200px;height:auto;/*animation:loading-spin 2s infinite;*/}
