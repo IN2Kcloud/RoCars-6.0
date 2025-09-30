@@ -474,56 +474,11 @@ a:hover,a:focus {color:#000;outline:none;}
 }
 
 /* Loader CSS */
-.loading{display:flex;align-items:center;justify-content:center;position:fixed;top:0;right:0;bottom:0;left:0;z-index:100; background:#ffa666; opacity:0; transition:0.5s;}
-.before-load .loading{opacity:1;}
-.loading-circle {position: relative; width: 25vw;}
-.backp { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Morbid Bones Brush Slant DEMO','LEMONMILK-Regular','Roboto',sans-serif; font-size: 5rem; cursor: progress; text-align: center; width: 25vw; /*filter: url(#minFilter);*/ }
-.loading-bg {
-  position: absolute;
-  inset: 0; /* fill parent */
-  z-index: 1;
-  filter: url(#HoverDistort-max);
-}
-
-/* animated thunder bar */
-.loading-bg::before {
-  content: '';
-  position: absolute;
-  top: 10%;
-  bottom: 10%;
-  height: 5px;
-  left: -1em;
-  right: 2em;
-  background-color: #ffffff;
-  border: 2px solid #000;
-  filter: url(#HoverDistort) drop-shadow(0px 0px 5px #000000);
-
-  /* animation */
-  animation: thunderSweep 2s ease-in-out infinite;
-}
-
-/* sweeping keyframes (left → full → right → empty) */
-@keyframes thunderSweep {
-  0% {
-    transform-origin: left;
-    transform: scaleX(0);
-  }
-  33.333% {
-    transform-origin: left;
-    transform: scaleX(1);
-  }
-  33.334% {
-    transform-origin: right;
-    transform: scaleX(1);
-  }
-  66.666% {
-    transform-origin: right;
-    transform: scaleX(0);
-  }
-  100% {
-    transform-origin: right;
-    transform: scaleX(0);
-  }
-}
-
-@media (max-width:500px) { .backp { font-size: 2rem; } .loading-circle, .backp {width: 50vw;} .loading-bg::before {height: 2px;} }
+.loadinger{display:flex;align-items:center;justify-content:center;position:fixed;top:0;right:0;bottom:0;left:0;z-index:100;background:#ffa666;opacity:0;transition:0.5s;}
+.before-load .loadinger{opacity:1;}
+/*@keyframes loading-spin{100%{transform:rotate(360deg);}}*/
+@keyframes loading-circle-ani{0%{stroke-dashoffset:157;}75%{stroke-dashoffset:-147;}100%{stroke-dashoffset:-157;}}
+.loading-circle{ aspect-ratio: 1/1; width:200px;height:auto;/*animation:loading-spin 2s infinite;*/}
+.loading-circle img{width:100%;height:auto; border: 2px #000;}
+.loading-circle circle{stroke:#171010;stroke-width:4;stroke-dasharray:157,157;stroke-dashoffset:0;fill:transparent;animation:loading-circle-ani 1s infinite;}
+/*@media (max-width:500px) {  }*/
