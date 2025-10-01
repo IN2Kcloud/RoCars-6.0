@@ -43,7 +43,7 @@
   font-size: 33vw;
   font-weight: bold;
   color: #fff;
-  filter: url(#distortionFilter);
+  /*filter: url(#distortionFilter);*/
   text-transform: uppercase;
   letter-spacing: -0.2em;
 }
