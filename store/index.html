@@ -21,14 +21,15 @@
   <div class="container">
     <section class="intro">
 
+      <h1 class="distorted-text rotate-on-portrait">ROCARS</h1>
+   
       <div class="distorted-text-wrapper">
           <svg id="filter-svg">
             <filter id="distortionFilter">
                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="turbulence"/>
                <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="50" xChannelSelector="R" yChannelSelector="G"/>
              </filter>
-           </svg>
-           <h1 class="distorted-text rotate-on-portrait">ROCARS</h1>
+           </svg>  
       </div>
 
 			<div class="content">
@@ -147,11 +148,6 @@
 	    </footer>
 
       <div class="menu-bt">
-     		<!--<div class="aros">
-      		<img class="aro" src="img/rotated-right-arrow-svgrepo-com.svg" alt="triangle with all three sides equal" />
-      		<img class="aro fade-in-out-I" src="img/right-arrow-svgrepo-com (2).svg" alt="triangle with all three sides equal" />
-      		<img class="aro fade-in-out-II" src="img/right-arrow-svgrepo-com (2).svg" alt="triangle with all three sides equal" />
-      	</div>-->
       	<button class="menu-distorted-text" id="menu-toggle" aria-label="Toggle Menu"><!--<img src="img/RoCarsW.png" alt="Some image"/>-->MENU!</button>
       </div>
 	
@@ -167,12 +163,12 @@
       		<nav class="menu" id="menu" style="filter: url(#menu-distortion-filter);">
 	      		<div class="menu__item">
 	      			<a class="menu__item-link" href="../index.html">ROCARS</a>
-	      			<img class="menu__item-img" src="img/1.png" alt="Some image"/>
+	      			<!--<img class="menu__item-img" src="img/1.png" alt="Some image"/>-->
 	      			<div class="marquee-menu">
 	      				<div class="marquee__inner" aria-hidden="true">
 	      					<span>ROCARS</span>
-						    <span>ROCARS</span>
-	      	      	        <span>ROCARS</span>
+						      <span>ROCARS</span>
+	      	      	<span>ROCARS</span>
 	      					<span>ROCARS</span>
 	      					<span>ROCARS</span>
 		      				<span>ROCARS</span>
@@ -185,7 +181,7 @@
 	      		</div>
 	      		<div class="menu__item">
 	      			<a class="menu__item-link" href="../cars/index.html">CARS</a>
-	      			<img class="menu__item-img" src="img/2.png" alt="Some image"/>
+	      			<!--<img class="menu__item-img" src="img/2.png" alt="Some image"/>-->
 	      			<div class="marquee-menu">
 	      				<div class="marquee__inner" aria-hidden="true">
 	      					<span>CARS</span>
@@ -203,7 +199,7 @@
 	      		</div>
 	      		<div class="menu__item">
 	      			<a class="menu__item-link" href="../brands/index.html">BRANDS</a>
-	      			<img class="menu__item-img" src="img/3.png" alt="Some image"/>
+	      			<!--<img class="menu__item-img" src="img/3.png" alt="Some image"/>-->
 	      			<div class="marquee-menu">
 	      				<div class="marquee__inner" aria-hidden="true">
 	      					<span>BRANDS</span>
@@ -221,7 +217,7 @@
 	      		</div>
 	      		<div class="menu__item">
 	      			<a class="menu__item-link" href="../studio/index.html">STUDIO</a>
-		      		<img class="menu__item-img" src="img/4.png" alt="Some image"/>
+		      		<!--<img class="menu__item-img" src="img/4.png" alt="Some image"/>-->
 		      		<div class="marquee-menu">
 		      			<div class="marquee__inner" aria-hidden="true">
 		      				<span>STUDIO</span>
@@ -239,7 +235,7 @@
 	      		</div>
 	      		<div class="menu__item">
 	      			<a class="menu__item-link" href="../Contact-Form/index.html">CONTACT</a>
-	      			<img class="menu__item-img" src="img/5.png" alt="Some image"/>
+	      			<!--<img class="menu__item-img" src="img/5.png" alt="Some image"/>-->
 		      		<div class="marquee-menu">
 		      			<div class="marquee__inner" aria-hidden="true">
 	      					<span>CONTACT</span>
@@ -299,32 +295,7 @@
     <script src="https://unpkg.com/split-type"></script>
 
     <!-- OUTRO -->
-      <script src="./menu.js" type="module"></script>
-
-      <svg id="distortion-filter" style="display:none;" xmlns="http://www.w3.org/2000/svg">
-        <filter id="imgDistortionFilter">
-          <feTurbulence id="turbulence" type="turbulence" baseFrequency="0.01" numOctaves="1" result="turbulence" seed="2"/>
-          <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="20" xChannelSelector="R" yChannelSelector="G"/>
-        </filter>
-      </svg>
-
-      <svg id="filters" style="display: none;">
-          <filter id="text-distortion">
-             <feTurbulence id="text-turbulence" type="turbulence" baseFrequency="0.02" numOctaves="2" result="turbulence" />
-             <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" xChannelSelector="R" yChannelSelector="G" />
-          </filter>
-      </svg>
-
-	  <svg class="max-txt" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <filter id="minFilter">
-            <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turbulence1">
-        	    <animate attributeName="seed" from="2" to="50" dur="10s" repeatCount="indefinite" />
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="10" xChannelSelector="R" yChannelSelector="G" />
-          </filter>
-        </defs>
-      </svg>
+    <script src="./menu.js" type="module"></script>
 
   </body>
 </html>
