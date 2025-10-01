@@ -262,6 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
       rotation: 0,
       duration: 2.5,
       ease: "power4.inOut",
+      clearProps: "transform", // ensures no leftover transforms
     });
   }
 
