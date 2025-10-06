@@ -226,18 +226,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const videos = [
-    document.getElementById("window-video"),
-    document.getElementById("glitch-video"),
-    document.getElementById("video-wrapper")
-  ];
+  const videos = document.querySelectorAll("video");
 
   videos.forEach(vid => {
-    if (vid) {
-      vid.play().catch(() => {
-        vid.muted = true; // force mute if needed
-        vid.play().catch(() => {});
-      });
-    }
+    vid.play().catch(() => {
+      vid.muted = true; // force mute if needed
+      vid.play().catch(() => {});
+    });
   });
 });
