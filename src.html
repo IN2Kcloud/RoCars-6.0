@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="base.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/three@0.160.0/build/three.module.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="circletype.min.js"></script>
 </head>
 <body class="before-load">
     <div class="loading">
@@ -41,14 +43,16 @@
 			</div>
 		</div>
 
-    <div class="tv-wrapper">
-      <div id="window" class="tv-window">
+    <div class="tv-wrapper ">
+      <div id="window" class="tv-window hover-zone">
         <div class="vhs-effect">
-          <video id="window-video" autoplay muted playsinline loop preload="auto" webkit-playsinline>
+          <!--<video id="window-video" autoplay muted playsinline loop preload="auto" webkit-playsinline>
             <source src="assets/RoCars.mp4" type="video/mp4">
             Your browser does not support video.
-          </video>
-          <div id="window-text">ROCARS</div>
+          </video>-->
+          <img class="RCLOGO" src="./assets/RoCarsW.svg" alt="Logo">
+          <img class="RCTXT" src="./assets/RoCarsTXT.svg" alt="Logo">
+          <!--<div id="window-text">RoCars</div>-->
           <div class="vhs-scanlines"></div>
           <div class="tv-static"></div>
         </div>
@@ -72,14 +76,33 @@
     </div>
 
 	  <div class="logo-glitch-wrapper">
-      <img src="./assets/RoCarsO.png" class="logo-base" alt="Logo">
-      <video src="assets/RoCars.mp4" autoplay loop muted></video>
+      <img src="./assets/RoCarsO.svg" class="logo-base" alt="Logo">
+      <!--<video src="assets/RoCars.mp4" autoplay loop muted></video>-->
     </div>
-
+    <!--
+    <div class="logo-glitch-wrapper-b">
+      <img src="./assets/RoCarsB.svg" class="logo-base-b" alt="Logo">
+    </div>
+    
     <div class="video-glitch-wrapper">
       <video id="glitch-video" autoplay muted loop playsinline preload="auto" webkit-playsinline>
         <source src="./assets/RoCars.mp4" type="video/mp4" />
       </video>
+    </div>
+    -->
+
+    <div class="circular-text">
+      <div class="text-zone">
+        <div class="center-content">
+          <img src="./assets/RoCarsB.svg" alt="RoCars Logo" class="center-logo">
+          <div class="morph-text" id="morph-text">RoCars</div>
+        </div>
+      </div>
+      <div class="circle-rotator">
+        <span id="rotated">
+          • ROCARS • TURBOS • MOTORS • DRIFTS • ROCARS •• ROCARS • TURBOS • MOTORS • DRIFTS • ROCARS •
+        </span>
+      </div>
     </div>
     
     <!--MENU-->
@@ -97,7 +120,7 @@
       </div>
       <div class="menu-copy">
         <span class="menu-bg"></span>
-        <p>START</p>
+        <p>Start</p>
       </div>
     </div>
 
@@ -357,6 +380,157 @@ function magneticEffect(element, strength = 40, easing = 0.15, invert = false) {
 magneticEffect(document.querySelector(".logo img"), 35, 0.15);       // img with base centering + rotation
 magneticEffect(document.querySelector(".logo a"), 20, 0.12, true);   // text opposite movement
 </script>
+
+  <script>
+    // Initialize circular text
+    const circleType = new CircleType(document.getElementById("rotated")).radius(80);
+    
+    let angle = 0;
+    let rotating = false;
+    let easingOut = false;
+    let rotationSpeed = 2;
+    let rafId = null;
+    
+    const $circle = $(".circular-text");
+    const $rotator = $(".circle-rotator");
+    const morphText = document.getElementById("morph-text");
+    const words = ["RoCars", "Drifts", "Turbos", "Motors"];
+    let wordIndex = 0;
+    let morphing = false;
+    let isActive = false; // for mobile toggle state
+    
+    // --------------------------
+    // REVEAL & ROTATION HANDLERS
+    // --------------------------
+    function revealCircularText() {
+      $circle.addClass("visible").removeClass("hide");
+      void $circle[0].offsetWidth; // restart animation
+      $circle.addClass("reveal");
+    }
+    
+    function hideCircularText() {
+      $circle.removeClass("reveal").addClass("hide");
+      setTimeout(() => $circle.removeClass("visible"), 600);
+    }
+    
+    function rotateLoop() {
+      if (!rotating && !easingOut) return;
+    
+      angle += rotationSpeed;
+      $rotator.css("transform", `rotate(${angle}deg)`);
+    
+      if (easingOut) {
+        rotationSpeed *= 0.95;
+        if (rotationSpeed < 0.05) {
+          easingOut = false;
+          hideCircularText();
+          return;
+        }
+      }
+    
+      rafId = requestAnimationFrame(rotateLoop);
+    }
+    
+    function startRotation() {
+      if (rotating) return;
+      rotating = true;
+      easingOut = false;
+      rotationSpeed = 0.5;
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(rotateLoop);
+    }
+    
+    function stopRotation() {
+      if (!rotating) return;
+      rotating = false;
+      easingOut = true;
+    }
+    
+    // --------------------------
+    // MORPHING TEXT
+    // --------------------------
+    function morphWords() {
+      if (!morphing) return;
+      morphText.style.opacity = 0;
+      setTimeout(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        morphText.textContent = words[wordIndex];
+        morphText.style.opacity = 1;
+      }, 400);
+      setTimeout(morphWords, 2200);
+    }
+    
+    // --------------------------
+    // DESKTOP HOVER EVENTS
+    // --------------------------
+    $(document).on("mouseenter", ".hover-zone", function() {
+      if (window.innerWidth > 768) { // desktop
+        revealCircularText();
+        startRotation();
+        morphing = true;
+        morphWords();
+      }
+    });
+    
+    $(document).on("mouseleave", ".hover-zone", function() {
+      if (window.innerWidth > 768) {
+        stopRotation();
+        morphing = false;
+      }
+    });
+    
+    // --------------------------
+    // MOBILE CLICK TO TOGGLE
+    // --------------------------
+    $(document).on("click", ".hover-zone", function(e) {
+      if (window.innerWidth <= 768) {
+        e.stopPropagation(); // prevent closing instantly
+        isActive = !isActive;
+    
+        if (isActive) {
+          revealCircularText();
+          startRotation();
+          morphing = true;
+          morphWords();
+        } else {
+          stopRotation();
+          morphing = false;
+        }
+      }
+    });
+    
+    // Close if clicked outside on mobile
+    $(document).on("click touchstart", function(e) {
+      if (window.innerWidth <= 768 && isActive && !$(e.target).closest(".hover-zone, .circular-text").length) {
+        isActive = false;
+        stopRotation();
+        morphing = false;
+      }
+    });
+
+  </script>
+  
+  <script>
+    function lockViewport() {
+      // Reset scroll position
+      window.scrollTo(0, 0);
+    
+      // Force body to exactly match viewport size
+      document.body.style.position = 'fixed';
+      document.body.style.top = '0';
+      document.body.style.left = '0';
+      document.body.style.width = window.innerWidth + 'px';
+      document.body.style.height = window.innerHeight + 'px';
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+      document.documentElement.style.width = '100%';
+      document.documentElement.style.height = '100%';
+    }
+    
+    // Apply immediately and on resize
+    lockViewport();
+    window.addEventListener('resize', lockViewport);
+  </script>
 
   
     
